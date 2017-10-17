@@ -70,6 +70,8 @@ const (
 	Overhead = "Overhead"
 	// RetryAttempts is the map key used for the amount of attempts the request was retried.
 	RetryAttempts = "RetryAttempts"
+	// @timestamp is the equivalent of time, but used for ELF-aaS like LogzIO.
+	Timestamp = "@timestamp"
 )
 
 // These are written out in the default case when no config is provided to specify keys of interest.
@@ -94,6 +96,7 @@ var defaultCoreKeys = [...]string{
 	DownstreamStatus,
 	DownstreamContentSize,
 	RequestCount,
+	Timestamp,
 }
 
 // This contains the set of all keys, i.e. all the default keys plus all non-default keys.

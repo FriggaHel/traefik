@@ -97,6 +97,7 @@ func (l *LogHandler) ServeHTTP(rw http.ResponseWriter, req *http.Request, next h
 	logDataTable := &LogData{Core: core, Request: req.Header}
 	core[StartUTC] = now
 	core[StartLocal] = now.Local()
+	core[Timestamp] = now
 
 	reqWithDataTable := req.WithContext(context.WithValue(req.Context(), DataTableKey, logDataTable))
 
